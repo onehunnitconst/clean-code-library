@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+  <tr>
+    <td>관리번호</td>
+    <td th:text="${book.getId()}"></td>
+  </tr>
+  <tr>
+    <td>ISBN</td>
+    <td th:text="${book.getIsbn()}"></td>
+  </tr>
+  <tr>
+    <td>제목</td>
+    <td th:text="${book.getTitle()}"></td>
+  </tr>
+  <tr>
+    <td>작가</td>
+    <td th:text="${book.getAuthor()}"></td>
+  </tr>
+  <tr>
+    <td>출판사</td>
+    <td th:text="${book.getPublisher()}"></td>
+  </tr>
+</table>
+<form th:action="@{/books/{id}/rent(id=${book.id})}" type="get">
+  <button>대출하기</button>
+</form>
+<button id="to-list">메인 페이지</button>
+</body>
+</html>
